@@ -25,14 +25,9 @@ void do_delete_repo() {
     }
 }
 
-int main() {
+void do_new_repo() {
     
-    char *command = (char *) malloc(sizeof(command));
-    char *proglang = (char *) malloc(sizeof(command));
-    
-    if(strcmp(command, "fa nrepo") == 0) {
-
-        printf("Enter a name for the new repo: ");
+    printf("Enter a name for the new repo: ");
         scanf("%s", reponame);
 
         printf("Enter the programming language for your repo (this can be changed later): ");
@@ -90,3 +85,14 @@ int main() {
             printf("Number of Files: 000");
         }
 }
+
+int main() {
+    
+    char *command = (char *) malloc(sizeof(command));
+    char *proglang = (char *) malloc(sizeof(command));
+    
+    if(strcmp(command, "fa drepo") == 0) {
+        do_delete_repo();
+    } else if(strcmp(command, "fa nrepo") == 0) {
+        do_new_repo()   
+    }
