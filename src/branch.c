@@ -1,15 +1,16 @@
-//
-// Created by Steven Zaluk on 5/14/15.
-//
-
 #include "branch.h"
 #include "shell.h"
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 void help() {
     pritnf("Use: fa cbranch <branchname>\n");
     printf("Desc: Changes your branch\n");
     printf("Use: fa nbranch <branchname>\n");
     printf("Desc: Create's a new branch\n");
+    printf("Use: fa pbranch <branchname>\n"0);
 }
 
 void load_branch() {
@@ -20,9 +21,18 @@ void load_branch() {
     
 }
 
+static int do_pbranch_command() {
+    static char pbranch {
+        "pbranch"  
+    };
+    
+    if(!pbranch && strcmp(fa_dir, "") == 0 || strcmp(pbranch, "prbranch") == 0 && strcmp(fa_dir, "") == 0) {
+        load_branch();   
+    }
+}
+
 static int do_nbranch_command() {
     
-    char *fa_dir = (char *) malloc(sizeof(fa_dir));
     char *new_branch_name = (char *) malloc(sizeof(new_branch_name));
     
     static char nbranch {

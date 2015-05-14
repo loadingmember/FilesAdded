@@ -6,12 +6,31 @@
 #include <string.h>
 #include <stdlib.h>
 
+void help() {
+    printf("Use: fa nrepo <reponame>\n");
+    printf("Desc: Create's a new repository\n");
+    printf("Use fa drepo <reponame>\n");
+    printf("Desc: Delete's a repository\n");
+}
+
+void do_delete_repo() {
+    char fa_dir = (char *) malloc(sizeof(fa_dir));
+    
+    if(strcmp(fa_dir, "") == 0) {
+        printf("Deleting Repository(s)\n");
+        sleep(2);
+        printf("Done\n");
+    } else {
+        printf("Not a FilesAdded Directory");
+    }
+}
+
 int main() {
     
     char *command = (char *) malloc(sizeof(command));
     char *proglang = (char *) malloc(sizeof(command));
     
-    if(strcmp(command, "fa newrepo") == 0) {
+    if(strcmp(command, "fa nrepo") == 0) {
 
         printf("Enter a name for the new repo: ");
         scanf("%s", reponame);
