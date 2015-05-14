@@ -80,9 +80,14 @@ void do_new_repo() {
             printf("Number of Files: 000");
         } else if(strcmp(proglang, "HTML") == 0 || strcmp(proglang, "html") == 0) {
             printf("Creating Repository under %s\n", reponame);
-            printf("%S with a language of %s\n", reponame, proglang);
+            printf("%s with a language of %s\n", reponame, proglang);
             printf("Repo Code: %s\n", repoidcode);
             printf("Number of Files: 000");
+        } else if(strcmp(proglang, "CSS") == 0 || strcmp(proglang, "css") == 0) {
+            printf("Creating Repository under %s\n", reponame);
+            printf("%s with a language of %s\n", reponame, proglang);
+            printf("Repo Code: %s\n", repoidcode);
+            printf("Number of Files: 000\n");
         }
 }
 
